@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS GS;
-
-CREATE DATABASE GS;
-
-USE GS;
 CREATE TABLE Escolas (
     id_escola INT AUTO_INCREMENT PRIMARY KEY,
     nome_escola VARCHAR(150) NOT NULL,
@@ -27,6 +22,8 @@ CREATE TABLE Filhos (
     nome_filho VARCHAR(150) NOT NULL,
     data_nascimento DATE NOT NULL,
     foto_filho VARCHAR(255),
+    possui_deficiencia BOOLEAN DEFAULT FALSE,
+    descricao_deficiencia VARCHAR(255),
     FOREIGN KEY (id_pai) REFERENCES Pais(id_pai) ON DELETE CASCADE,
     FOREIGN KEY (id_escola) REFERENCES Escolas(id_escola)
 );
