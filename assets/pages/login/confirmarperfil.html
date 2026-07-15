@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go School - Perfil Selecionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../../css/style.css">
+</head>
+<body>
+
+    <div class="card" id="confirmCard">
+        <button class="btn-back" onclick="window.location.href='escolherperfil.html'">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            Voltar
+        </button>
+
+        <div class="logo-container">
+            <div class="logo-text">
+                <span class="logo-go">GO</span>
+                <span class="logo-school">SCHOOL</span>
+            </div>
+        </div>
+
+        <div class="success-badge">
+            <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+
+        <h1>Perfil selecionado!</h1>
+        <p class="subtitle">Agora é só preencher seus dados para criar sua conta.</p>
+
+        <button class="btn-submit" id="btnContinue" onclick="redirectToRegisterForm()">
+            Continuar como Responsável
+        </button>
+
+        <button class="link-secondary" onclick="window.location.href='escolherperfil.html'">
+            Escolher outro perfil
+        </button>
+    </div>
+
+    <script>
+        const profile = localStorage.getItem('selected_profile') || 'responsavel';
+        const card = document.getElementById('confirmCard');
+        const btnContinue = document.getElementById('btnContinue');
+
+        if (profile === 'motorista') {
+            card.classList.add('theme-motorista');
+            btnContinue.textContent = "Continuar como Motorista";
+        } else {
+            card.classList.remove('theme-motorista');
+            btnContinue.textContent = "Continuar como Responsável";
+        }
+
+        function redirectToRegisterForm() {
+            if (profile === 'motorista') {
+                window.location.href = 'cadastrarmotorista.html';
+            } else {
+                window.location.href = 'cadastrarresponsavel.html';
+            }
+        }
+    </script>
+</body>
+</html>

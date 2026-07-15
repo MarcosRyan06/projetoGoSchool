@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go School - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../../css/style.css">
+</head>
+<body>
+
+    <div class="card" id="loginCard">
+        <div class="decor-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="logo-container">
+            <div class="logo-text">
+                <span class="logo-go">GO</span>
+                <span class="logo-school">SCHOOL</span>
+            </div>
+        </div>
+
+        <h1>Bem-vindo de volta!</h1>
+        <p class="subtitle">Faça login para acessar sua conta</p>
+
+        <div class="role-selector">
+            <button type="button" class="role-btn active-responsavel" id="btnResponsavel" onclick="switchTheme('responsavel', 'loginCard', 'btnResponsavel', 'btnMotorista')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                Responsável
+            </button>
+            <div class="role-divider"></div>
+            <button type="button" class="role-btn inactive-motorista" id="btnMotorista" onclick="switchTheme('motorista', 'loginCard', 'btnResponsavel', 'btnMotorista')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
+                </svg>
+                Motorista
+            </button>
+        </div>
+
+        <form onsubmit="event.preventDefault();">
+            <div class="input-group">
+                <div class="input-icon-left">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <input type="text" placeholder="E-mail ou telefone" required>
+            </div>
+
+            <div class="input-group input-group-password">
+                <div class="input-icon-left">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </div>
+                <input type="password" id="passwordInput" placeholder="Senha" required>
+                <button type="button" class="input-icon-right" onclick="togglePassword('passwordInput', 'eyeIcon')" aria-label="Mostrar/ocultar senha">
+                    <svg id="eyeIcon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="extra-options">
+                <label class="remember-me">
+                    <input type="checkbox">
+                    Lembrar de mim
+                </label>
+                <a href="recuperarsenha.html" class="forgot-password">Esqueceu sua senha?</a>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                </svg>
+                Entrar
+            </button>
+        </form>
+
+        <div class="separator">ou continue com</div>
+
+        <div class="social-buttons">
+            <button type="button" class="social-btn">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114A5.53 5.53 0 0 1 8.4 13c0-3.037 2.463-5.514 5.59-5.514 1.416 0 2.71.523 3.714 1.385l3.111-3.112A9.914 9.914 0 0 0 13.99 3c-5.523 0-10 4.477-10 10 0 5.522 4.477 10 10 10 5.766 0 9.806-4.054 9.806-9.977 0-.58-.063-1.16-.177-1.738H12.24Z"/>
+                </svg>
+                Google
+            </button>
+            <button type="button" class="social-btn">
+                <svg viewBox="0 0 23 23">
+                    <path fill="#f35325" d="M0 0h11v11H0z"/>
+                    <path fill="#80bb1a" d="M12 0h11v11H12z"/>
+                    <path fill="#00a1f1" d="M0 12h11v11H0z"/>
+                    <path fill="#ffb900" d="M12 12h11v11H12z"/>
+                </svg>
+                Microsoft
+            </button>
+        </div>
+
+        <p class="signup-text">
+            Ainda não tem uma conta? <a href="escolherperfil.html">Cadastre-se</a>
+        </p>
+
+        <div class="footer-illustration">
+            <svg class="illustration-svg" viewBox="0 0 400 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="340" y="30" width="35" height="60" rx="3" fill="#cbd5e1" fill-opacity="0.3" />
+                <rect x="345" y="40" width="6" height="8" rx="1" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="362" y="40" width="6" height="8" rx="1" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="305" y="50" width="30" height="40" rx="2" fill="#cbd5e1" fill-opacity="0.2" />
+                <circle cx="70" cy="72" r="12" fill="#94a3b8" fill-opacity="0.15" />
+                <circle cx="105" cy="68" r="16" fill="#94a3b8" fill-opacity="0.2" />
+                <circle cx="320" cy="74" r="12" fill="#94a3b8" fill-opacity="0.15" />
+
+                <line x1="45" y1="50" x2="45" y2="90" stroke="#1553df" stroke-width="2.5" />
+                <circle cx="45" cy="50" r="15" fill="#ffffff" stroke="#1553df" stroke-width="2.5" />
+                <rect x="39" y="44" width="12" height="9" rx="1.5" fill="#1553df" />
+                <rect x="41" y="53" width="2" height="2" fill="#1553df" />
+                <rect x="47" y="53" width="2" height="2" fill="#1553df" />
+                <circle cx="42" cy="51" r="1" fill="#ffffff" />
+                <circle cx="48" cy="51" r="1" fill="#ffffff" />
+
+                <g id="schoolBus">
+                    <rect x="200" y="45" width="75" height="30" rx="6" fill="#1553df" />
+                    <path d="M200 55 C200 48 204 45 208 45 H215 V75 H200 V55 Z" fill="#1553df" />
+                    <rect x="210" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <rect x="224" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <rect x="238" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <rect x="252" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <circle cx="201" cy="66" r="2.5" fill="#fef08a" />
+                    <circle cx="216" cy="76" r="8" fill="#1e293b" />
+                    <circle cx="216" cy="76" r="4" fill="#94a3b8" />
+                    <circle cx="256" cy="76" r="8" fill="#1e293b" />
+                    <circle cx="256" cy="76" r="4" fill="#94a3b8" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <script src="./../../js/script.js"></script>
+</body>
+</html>

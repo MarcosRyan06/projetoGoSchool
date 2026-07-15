@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go School - Recuperar Senha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../../css/style.css">
+</head>
+<body>
+
+    <div class="card" id="recoveryCard">
+        <div class="decor-dots-right">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="logo-container">
+            <div class="logo-text">
+                <span class="logo-go">GO</span>
+                <span class="logo-school">SCHOOL</span>
+            </div>
+        </div>
+
+        <div class="lock-icon-badge">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m0 0v5m0-5h5m-5 0H7m5 0V9a4 4 0 00-8 0v4h12z"/>
+            </svg>
+        </div>
+
+        <h1>Recuperar senha</h1>
+        <p class="subtitle">Informe seu e-mail ou telefone cadastrado para receber o link de recuperação.</p>
+
+        <div class="role-selector">
+            <button type="button" class="role-btn active-responsavel" id="btnResponsavel" onclick="switchTheme('responsavel', 'recoveryCard', 'btnResponsavel', 'btnMotorista')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                Responsável
+            </button>
+            <div class="role-divider"></div>
+            <button type="button" class="role-btn inactive-motorista" id="btnMotorista" onclick="switchTheme('motorista', 'recoveryCard', 'btnResponsavel', 'btnMotorista')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
+                </svg>
+                Motorista
+            </button>
+        </div>
+
+        <form onsubmit="event.preventDefault();">
+            <div class="input-group">
+                <div class="input-icon-left">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <input type="text" placeholder="E-mail ou telefone" required>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                </svg>
+                Enviar link de recuperação
+            </button>
+        </form>
+
+        <p class="login-back-text">
+            Lembrou sua senha? <a href="login.html">Fazer login</a>
+        </p>
+
+        <div class="security-info-box">
+            <div class="security-icon">
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM10 14.5l-3-3 1.4-1.4 1.6 1.6 4.6-4.6 1.4 1.4-6 6z"/>
+                </svg>
+            </div>
+            <div class="security-text">
+                <strong>Seus dados estão protegidos</strong>
+                Utilizamos segurança e criptografia avançada para proteger suas informações.
+            </div>
+        </div>
+
+        <div class="footer-illustration">
+            <svg class="illustration-svg" viewBox="0 0 400 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="340" y="30" width="35" height="60" rx="3" fill="var(--illustration-color)" fill-opacity="0.12" />
+                <rect x="345" y="40" width="6" height="8" rx="1" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="362" y="40" width="6" height="8" rx="1" fill="#ffffff" fill-opacity="0.6" />
+                <rect x="305" y="50" width="30" height="40" rx="2" fill="var(--illustration-color)" fill-opacity="0.08" />
+                <circle cx="70" cy="72" r="12" fill="var(--illustration-color)" fill-opacity="0.1" />
+                <circle cx="105" cy="68" r="16" fill="var(--illustration-color)" fill-opacity="0.12" />
+                <circle cx="320" cy="74" r="12" fill="var(--illustration-color)" fill-opacity="0.1" />
+
+                <line x1="45" y1="50" x2="45" y2="90" stroke="var(--current-primary)" stroke-width="2.5" />
+                <circle cx="45" cy="50" r="15" fill="#ffffff" stroke="var(--current-primary)" stroke-width="2.5" />
+                <rect x="39" y="44" width="12" height="9" rx="1.5" fill="var(--current-primary)" />
+                <circle cx="42" cy="51" r="1" fill="#ffffff" />
+                <circle cx="48" cy="51" r="1" fill="#ffffff" />
+
+                <g id="schoolBus">
+                    <rect x="200" y="45" width="75" height="30" rx="6" fill="var(--current-primary)" />
+                    <path d="M200 55 C200 48 204 45 208 45 H215 V75 H200 V55 Z" fill="var(--current-primary)" />
+                    <rect x="210" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <rect x="224" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <rect x="238" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <rect x="252" y="49" width="10" height="10" rx="1" fill="#e2e8f0" />
+                    <circle cx="201" cy="56" r="2.5" fill="#fef08a" />
+                    <circle cx="216" cy="76" r="8" fill="#1e293b" />
+                    <circle cx="216" cy="76" r="4" fill="#94a3b8" />
+                    <circle cx="256" cy="76" r="8" fill="#1e293b" />
+                    <circle cx="256" cy="76" r="4" fill="#94a3b8" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <script src="./../../js/script.js"></script>
+</body>
+</html>
