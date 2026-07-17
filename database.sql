@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS transporte_escolar;
+
+USE transporte_escolar;
+
 CREATE TABLE Escolas (
     id_escola INT AUTO_INCREMENT PRIMARY KEY,
     nome_escola VARCHAR(150) NOT NULL,
