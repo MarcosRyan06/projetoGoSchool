@@ -2,7 +2,7 @@
 
 
 export async function listarMotoristas(){
-    const [rows] = await conexao.query('SELECT * FROM motoristas');
+    const [rows] = await conexao.query('SELECT * FROM Motoristas');
     return rows;
 }
  
