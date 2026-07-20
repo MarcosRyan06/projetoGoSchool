@@ -2,11 +2,11 @@
 
 
 export async function listarFilhos(){
-    const [rows] = await conexao.query('SELECT * FROM filhos');
+    const [rows] = await conexao.query('SELECT * FROM Filhos');
     return rows;
 }
 
-export async function cadastrarFilho(dados){
+export async function cadastrarFilhos(dados){
     const sql = `INSERT INTO Filhos(
     id_pai,
     id_escola,
