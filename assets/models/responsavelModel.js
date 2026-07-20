@@ -7,13 +7,12 @@ export async function listarPais(){
 
 export async function cadastrarPai(dados){
     const sql = `INSERT INTO Pais(
-    nome_pai,cpf_pai,telefone_pai,email_pai,senha_pai) VALUES(?,?,?,?,?)`;
+    nome_pai,cpf_pai,telefone_pai,senha_pai) VALUES(?,?,?,?)`;
 
     const valores = [
         dados.nome_pai,
         dados.cpf_pai,
         dados.telefone_pai,
-        dados.email_pai,
         dados.senha_pai
     ];
     const [resultado] = await conexao.query(sql, valores);
