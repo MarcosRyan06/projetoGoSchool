@@ -12,4 +12,12 @@ export async function cadastrarFilhos(req, res){
     }
 }
 
+export async function listarFilhos(req, res){
+    try{
+        const resultado = await filhoModel.listarFilhos();
 
+        res.status(200).json(resultado);
+    } catch (error){
+        res.status(500).json({message: "Erro ao listar filhos ! Tente novamente mais tarde.", error: error.message});
+    }
+}

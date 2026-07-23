@@ -10,3 +10,12 @@ export async function cadastrarEscolas(req, res){
         res.status(500).json({message: "Erro ao cadastrar escola ! Tente novamente mais tarde.", error: error.message});        
     }
 }
+
+export async function listarEscolas(req, res){
+    try{
+        const resultado = await escolasModel.listarEscolas();
+        res.status(200).json(resultado);
+    } catch (error){
+        res.status(500).json({message: "Erro ao listar escolas ! Tente novamente mais tarde.", error: error.message});
+    }
+}

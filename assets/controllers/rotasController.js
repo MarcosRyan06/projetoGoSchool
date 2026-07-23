@@ -12,4 +12,13 @@ export async function cadastrarRotas(req, res){
     }
 }
 
+export async function listarRotas(req, res){
+    try{
+        const resultado = await rotasModel.listarRotas();
+        res.status(200).json(resultado);
+    } catch (error){
+        res.status(500).json({message: "Erro ao listar rotas ! Tente novamente mais tarde.", error: error.message});
+    }   
+}
+
 
