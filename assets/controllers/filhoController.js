@@ -4,7 +4,7 @@ export async function cadastrarFilhos(req, res){
     try{
         const dados = req.body;
 
-        const resultado = await cadastrarFilhos(dados);
+        const resultado = await filhoModel.cadastrarFilhos(dados);
 
         res.status(201).json({message:" Filho cadastrado com sucesso!", id: resultado.insertId});
     } catch (error){

@@ -4,7 +4,7 @@ export async function cadastrarParadas_Rota(req, res){
     try{
         const dados = req.body;
 
-        const resultado = await cadastrarParadas_Rota(dados);
+        const resultado = await parada_rotasModel.cadastrarParadas_Rota(dados);
 
         res.status(201).json({message: "Parada cadastrada com sucesso!", id: resultado.insertId});
     } catch (error){
