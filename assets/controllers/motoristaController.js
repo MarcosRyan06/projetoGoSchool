@@ -14,3 +14,11 @@ export async function cadastrarMotoristas(req, res){
     }
 }
 
+export async function listarMotoristas(req, res){
+    try{
+        const resultado = await motoristaModel.listarMotoristas();
+        res.status(200).json(resultado);
+    } catch (error){
+        res.status(500).json({message: "Erro ao listar motoristas ! Tente novamente mais tarde.", error: error.message});
+    }
+}

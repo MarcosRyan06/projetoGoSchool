@@ -12,3 +12,11 @@ export async function cadastrarPais(req, res){
     }
 }
 
+export async function listarPais(req, res){
+    try{
+        const resultado = await responsavelModel.listarPais();
+        res.status(200).json(resultado);
+    } catch (error){
+        res.status(500).json({message: "Erro ao listar responsaveis ! Tente novamente mais tarde.", error: error.message});
+    }
+}
