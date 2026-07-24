@@ -4,35 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go School - Início</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <style>
-        body {
+        body{
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f3f5f9;
+            background-color: #f74a00e2;
             margin: 0;
         }
         .link-login {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #1553df;
+            padding: 7px 30px;
+            background-color: #007bff;
             color: #ffffff;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 4px;
             font-weight: bold;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .link-login:hover {
             background-color: #0f3dba;
         }
+
+        /* landpage kaique */
+        
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .logo a {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: #b3b3b3;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .btn-cadastrar {
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-cadastrar:hover {
+      background-color: #0056b3;
+    }
     </style>
 </head>
+
 <body>
 
-    <!-- Link direto e simples para a tela de login -->
-    <a class="link-login" href="./assets/pages/login/login.html">Ir para a Tela de Login</a>
+<header class="header-container-landpage">
+  <!-- Lado Esquerdo: Logo (O raio único na direita será injetado aqui pelo CSS ::after) -->
+  <a href="#" class="logo-container-landpage">
+    <div class="logo-text-landpage">
+      <span class="logo-go-landpage">GO</span>
+      <span class="logo-school-landpage">SCHOOL</span>
+    </div>
+  </a>
+
+  <!-- Lado Direito: Estrutura de duas camadas -->
+  <div class="content-section-landpage">
+    
+    <!-- Camada Superior Branca (Infos + Login/Cadastro) -->
+    <div class="top-bar-landpage">
+      <div class="top-info-landpage">
+        <span class="top-info-span-landpage">📞 (11) 94234-4324</span>
+        <span class="top-info-span-landpage">🕒 Seg - Sex: 08:00 - 18:00</span>
+      </div>
+      <div class="top-auth-landpage">
+        <a class="link-login-landpage" href="./assets/pages/login/login.html">Login</a>
+        <span class="top-divider-landpage">|</span>
+        <a class="btn-cadastrar-landpage" href="#cadastrar">Cadastrar</a>
+      </div>
+    </div>
+
+    <!-- Camada Inferior Azul (Links de Navegação que passam por trás da logo) -->
+    <nav class="main-nav-landpage">
+      <ul class="nav-menu-landpage">
+        <li><a href="#projeto" class="nav-link-landpage">Projeto</a></li>
+        <li><a href="#contato" class="nav-link-landpage">Contato</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+
 
 </body>
-</html>
+</html>          

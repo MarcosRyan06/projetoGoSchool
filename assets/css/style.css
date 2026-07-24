@@ -771,3 +771,182 @@ form {
     width: 100%;
     height: 100%;
 }
+/* logo landpage kaique */
+
+   .header-container-landpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  height: 95px;
+}
+
+/* --- LOGO GO SCHOOL (POR CIMA DA LINHA AZUL) --- */
+.logo-container-landpage {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: 100%;
+  z-index: 1010;
+  padding-right: 50px;
+}
+
+.logo-text-landpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.75;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  transform: skewX(-10deg);
+}
+
+.logo-go-landpage {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #ffffff;
+  text-shadow: 
+    0 1px #0056b3, 0 2px #0056b3, 0 3px #0056b3, 
+    -2px 2px 0px #002d62, 2px 2px 0px #002d62,
+    0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-school-landpage {
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #0099ff 0%, #0056b3 100%);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+  box-shadow: 0px 3px 0px #002d62, 0px 5px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05) rotate(-2deg);
+  margin-top: 5px;
+}
+
+.logo-container-landpage::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  width: 26px;
+  height: 40px;
+  background-color: #ffaa00;
+  clip-path: polygon(40% 0%, 100% 0%, 35% 45%, 80% 45%, 0% 100%, 35% 55%, 10% 55%);
+  filter: drop-shadow(1px 2px 0px #cc6600);
+  transform: rotate(15deg);
+}
+
+
+/* --- BLOCO DA DIREITA --- */
+.content-section-landpage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar-landpage {
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 280px;
+  background-color: #ffffff;
+  gap: 40px;
+}
+
+.top-info-landpage {
+  display: flex;
+  gap: 24px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.top-info-span-landpage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-auth-landpage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-divider-landpage {
+  color: #cbd5e1;
+}
+
+.main-nav-landpage {
+  height: 50px;
+  background-color: #0056b3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px;
+}
+
+.nav-menu-landpage {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-link-landpage {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-link-landpage:hover {
+  color: #ffaa00;
+}
+
+/* --- ESTILO DOS BOTÕES DE LOGIN E CADASTRO --- */
+.link-login-landpage {
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.link-login-landpage:hover {
+  background-color: #0f3dba;
+}
+
+.btn-cadastrar-landpage {
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.btn-cadastrar-landpage:hover {
+  background-color: #0f3dba;
+}
